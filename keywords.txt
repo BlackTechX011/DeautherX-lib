@@ -1,0 +1,46 @@
+#######################################
+# Syntax Coloring Map For DeautherX
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+DeautherScanner	KEYWORD1
+DeautherAttack	KEYWORD1
+DeautherEvilTwin	KEYWORD1
+DeautherRogueAP	KEYWORD1
+DeautherAPList	KEYWORD1
+DeautherTargetList	KEYWORD1
+DeautherStationList	KEYWORD1
+DeautherTarget	KEYWORD1
+DeautherAP	KEYWORD1
+DeautherStation	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+begin	KEYWORD2
+update	KEYWORD2
+startAP	KEYWORD2
+stopAP	KEYWORD2
+startST	KEYWORD2
+stopST	KEYWORD2
+startDeauth	KEYWORD2
+stopDeauth	KEYWORD2
+startBeacon	KEYWORD2
+stopBeacon	KEYWORD2
+start	KEYWORD2
+stop	KEYWORD2
+getAPs	KEYWORD2
+getStations	KEYWORD2
+fromSelection	KEYWORD2
+add	KEYWORD2
+count	KEYWORD2
+size	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+ATTACK_DEAUTH	LITERAL1
+ATTACK_BEACON	LITERAL1
+ATTACK_PROBE	LITERAL1

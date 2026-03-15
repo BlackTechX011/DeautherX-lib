@@ -1,0 +1,28 @@
+# Arduino and C++ ignores
+.pio/
+.vscode/
+build/
+*.o
+*.out
+*.exe
+*.bin
+*.elf
+*.hex
+*.a
+*.map
+compile_output*.txt
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Any temporary or test folders
+test_tmp/
+v2/
+v3/
+DeautherX/

@@ -1,0 +1,56 @@
+name: Release on VERSION change
+
+on:
+  push:
+    paths:
+      - 'VERSION'
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Read VERSION
+      id: get_version
+      run: |
+        VERSION_TAG=$(head -n 1 VERSION | xargs)
+        echo "version=$VERSION_TAG" >> $GITHUB_OUTPUT
+        
+        # Read the rest of the file for release notes
+        tail -n +2 VERSION > RELEASE_NOTES.md
+
+    - name: Compile CLIDeauther Example
+      uses: arduino/compile-sketches@v1
+      with:
+        fqbn: esp8266:esp8266:nodemcuv2
+        libraries: |
+          - source-path: ./
+        platforms: |
+          - name: esp8266:esp8266
+            source-url: https://arduino.esp8266.com/stable/package_esp8266com_index.json
+        sketch-paths: |
+          - examples/CLIDeauther
+      
+    - name: Rename Compiled Binary
+      run: |
+        mkdir -p build/
+        find /home/runner/work -name "*.bin" -exec cp {} build/CLIDeauther.bin \;
+
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: ${{ steps.get_version.outputs.version }}
+        name: Release ${{ steps.get_version.outputs.version }}
+        body_path: RELEASE_NOTES.md
+        files: |
+          build/CLIDeauther.bin
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
