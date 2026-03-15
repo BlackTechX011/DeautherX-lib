@@ -39,7 +39,7 @@ By stripping away all hardcoded UI elements (Web UI, OLED displays, CLI), this l
 - 🎭 **Evil Twin & Captive Portal:** Configurable Evil Twin attacks with forced captive portals and custom HTML injection.
 - 🛑 **Rogue AP:** Easily spin up fully functional Rogue Access Points (open or closed).
 - 💾 **Secure Local Storage:** Automated management of captured data (credentials, probe requests) utilizing the ESP8266 `LittleFS` file system.
-- 🛡️ **Deauth Detector:** Real-time background detection of deauthentication and disassociation attacks with event callbacks and LED signaling.
+- 🛡️ **Deauth Detector:** Real-time background detection of deauthentication and disassociation attacks with event callbacks.
 - 🛠 **Highly Customizable:** Supply your own phishing HTML templates and scripts directly via the ESP8266 file system.
 
 ---
@@ -124,7 +124,7 @@ Check the [`examples/`](examples/) directory for ready-to-flash sketches that de
 - 💻 **`CLIDeauther`**: A fully-featured Serial Command Line Interface. Combines scanning, attacks, and evil twin configurations into an interactive prompt.
 - 🌊 **`BeaconFlood`**: A minimal implementation demonstrating how to execute a multi-SSID beacon flood attack.
 - 🎯 **`ScanAndAttack`**: Demonstrates the programmatic, headless flow of hunting for specific Wi-Fi targets and engaging them automatically.
-- 🛡️ **`DeauthDetector`**: Demonstrates background attack detection with LED alerts and Serial logging.
+- 🛡️ **`DeauthDetector`**: Demonstrates background attack detection with event callbacks and Serial logging.
 
 ---
 
